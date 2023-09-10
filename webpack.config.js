@@ -3,7 +3,7 @@ module.exports = () => {
     return {
         resolve: {
             alias: {
-                "@": path.join(__dirname, "src")
+                "@/*": path.join(__dirname, "src")
             },
             extensions: [".json", ".js", ".jsx", ".ts", ".tsx"],
         },
