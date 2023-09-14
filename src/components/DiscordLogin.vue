@@ -26,6 +26,7 @@ export default {
 .discord_login_button {
   color: inherit;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .discord_login_button {
