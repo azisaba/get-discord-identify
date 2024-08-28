@@ -58,6 +58,7 @@ export default {
 }
 
 .qa dt {
+  margin-left: 1vh;
   margin-bottom: .5em;
   color: aliceblue;
   font-weight: 600;

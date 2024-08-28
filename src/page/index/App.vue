@@ -1,8 +1,12 @@
 <template>
-  <h1>アジ鯖寄付 Amazonギフト券コード受付サイト</h1>
-  <DiscordLogin />
-  <SiteFAQ />
-  <CustomFooter />
+  <div id="app">
+    <div class="content">
+      <h1>アジ鯖寄付 Amazonギフト券コード受付サイト</h1>
+      <DiscordLogin />
+      <SiteFAQ />
+    </div>
+    <CustomFooter />
+  </div>
 </template>
 
 <script>
@@ -26,14 +30,17 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  margin-top: 60px;
+  /**margin-top: 60px;**/
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 *{
   margin:0;
   padding: 0;
 }
 
-body {
+html, body {
   background-color: #333333;
   color: #f2f2f2;
   height: 100%;
@@ -46,6 +53,9 @@ body {
 }
 
 .content {
-  padding-bottom: 100px;
+  padding-top: 2vh;
+  padding-bottom: 2px;
+  flex: 1;
 }
+
 </style>

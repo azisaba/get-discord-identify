@@ -24,8 +24,8 @@ export default {
 
 div {
   margin-top: 2.8vh;
+  margin-bottom: 2.6vh;
 }
-
 footer {
   margin-top: auto;
   background-color: #2c3e50;
@@ -33,9 +33,10 @@ footer {
   min-height: 7vh;
 
   width:100%;
-  position: absolute;
+
   bottom: 0;
 }
+
 footer a{
  color: aliceblue;
 }
