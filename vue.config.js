@@ -4,7 +4,7 @@ module.exports = defineConfig({
   pages: {
     index: {
       entry: 'src/page/index/main.js',
-      title: 'home | アジ鯖寄付 Amazon受付',
+      title: 'アジ鯖寄付 Amazon受付',
     },
     identify: {
       entry: 'src/page/identify/main.js',
