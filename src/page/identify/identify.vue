@@ -78,14 +78,19 @@ export default {
   <NotDiscordJoined v-if="!isJoindDiscord" />
   <h3 v-if="!hasUserData">認証に失敗しました。再ログインしてください。</h3>
   <DiscordLogin v-if="!isComplete" />
+  <div id="app">
+    <div class="content">
+    </div>
   <CustomFooter />
+  </div>
 </template>
 
 <style>
-body {
+html, body {
   margin: 0;
   background-color: #333333;
   color: #f2f2f2;
+  height: 100%;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -93,5 +98,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   margin-top: 60px;
+  /**margin-top: 60px;**/
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
+
+.content {
+  padding-top: 2vh;
+  padding-bottom: 2px;
+  flex: 1;
+}
+
 </style>
