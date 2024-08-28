@@ -9,6 +9,7 @@ export default {
   data(){
     return {
       isComplete: true,
+      invalidLoginSession: true,
       hasUserData: true,
       isJoindDiscord: true,
       finishLoad: false
@@ -24,8 +25,9 @@ export default {
       const code = (new URLSearchParams(location.search)).get("code")
 
       if(code===null){
-        this.hasUserData = false;
+        this.invalidLoginSession = true;
         this.isComplete = false;
+        this.finishLoad = true;
         return;
       }
 
@@ -73,13 +75,14 @@ export default {
 
 
 <template>
-  <h1 v-if="!isComplete">次のステップに進めません！</h1>
-  <Loading v-if="!finishLoad" />
-  <NotDiscordJoined v-if="!isJoindDiscord" />
-  <h3 v-if="!hasUserData">認証に失敗しました。再ログインしてください。</h3>
-  <DiscordLogin v-if="!isComplete" />
   <div id="app">
     <div class="content">
+      <h1 v-if="!isComplete">次のステップに進めません！</h1>
+      <Loading v-if="!finishLoad" />
+      <NotDiscordJoined v-if="!isJoindDiscord" />
+      <h3 v-if="invalidLoginSession">無効なログインセッションです。再ログインしてください。</h3>
+      <h3 v-if="!hasUserData">ユーザデータの取得に失敗しました。再ログインしてください。</h3>
+      <DiscordLogin v-if="!isComplete" />
     </div>
   <CustomFooter />
   </div>
@@ -97,7 +100,6 @@ html, body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  margin-top: 60px;
   /**margin-top: 60px;**/
   display: flex;
   flex-direction: column;
