@@ -9,7 +9,7 @@ export default {
   data(){
     return {
       isComplete: true,
-      invalidLoginSession: true,
+      invalidLoginSession: false,
       hasUserData: true,
       isJoindDiscord: true,
       finishLoad: false
